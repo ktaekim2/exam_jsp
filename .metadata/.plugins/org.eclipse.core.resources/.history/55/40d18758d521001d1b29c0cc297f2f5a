@@ -1,0 +1,19 @@
+<%@ page import="com.ex.ex1.model.ExDAO" %>
+<%@ page import="com.ex.ex1.model.ExDTO" %>
+<%@ page import="java.util.List" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>find.jsp</h2>
+<%
+	ExDAO exDAO = new ExDAO();
+	List<ExDTO> findAll = exDAO.findAll();
+%>
+</body>
+</html>
