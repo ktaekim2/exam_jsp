@@ -43,8 +43,8 @@
             <th>대표전화</th>
         </tr>
         <%
-            List<MemberDTO> memberList = (List<MemberDTO>) request.getAttribute("memberList");
-            for (MemberDTO memberDTO : memberList) {
+            List<MemberDTO> memberList = (List<MemberDTO>) request.getAttribute("memberList"); // 괄호는 형변환
+            for (MemberDTO memberDTO : memberList) { // object 객체로 리턴이 오기 때문에 강제 형변환
         %>
         <tr>
             <td><%=memberDTO.getM_no()%></td>

@@ -77,7 +77,7 @@ public class MemberDAO {
             memberDTO.setCustname(rs.getString(2));
             memberDTO.setPhone(rs.getString(3));
             memberDTO.setAddress(rs.getString(4));
-            memberDTO.setJoindate(rs.getString(5));
+            memberDTO.setJoindate(rs.getString(5).substring(0, 10));
             memberDTO.setGrade(rs.getString(6));
             memberDTO.setCity(rs.getString(7));
             memberList.add(memberDTO);

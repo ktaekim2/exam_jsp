@@ -45,8 +45,8 @@ public class VoteController extends HttpServlet {
         if (action.equals("/memberList")) {
             // 후보자 조회 요청
             List<MemberDTO> memberList = voteDAO.memberList();
-            request.setAttribute("memberList", memberList);
-            resultPage = "memberList.jsp";
+            request.setAttribute("memberList", memberList); // 화면에 가져가기 위해 model처럼 request 객체에 담는 것
+            resultPage = "memberList.jsp"; // 목적지 jsp를 담는것
         } else if (action.equals("/voteForm")) {
             // 투표 화면 요청
             resultPage = "voteForm.jsp";
@@ -65,7 +65,7 @@ public class VoteController extends HttpServlet {
         } else if (action.equals("/voteList")) {
             // 투표 검수 조회
             List<VoteDTO> voteList = voteDAO.voteList();
-            request.setAttribute("voteList", voteList);
+            request.setAttribute("voteList", voteList); 
             resultPage = "voteList.jsp";
         } else if (action.equals("/voteRanking")) {
             // 후보자 등수
