@@ -17,7 +17,7 @@ public class VoteController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            doProcess(request, response);
+            doProcess(request, response); // doProcess는 내가 만든것 아무렇게 만들어도 됨.
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -34,6 +34,7 @@ public class VoteController extends HttpServlet {
     public void doProcess(HttpServletRequest request, HttpServletResponse response) throws Exception {
         request.setCharacterEncoding("UTF-8"); // 한글 깨짐 방지 등을 위해
         String uri = request.getRequestURI(); // 요청한 주소값을 가져옴.(주소가 'localhost:8080/프로젝트이름/요청주소' 라면 '/프로젝트이름/요청주소' 를 가져옴.)
+        System.out.println("uri=" + uri);
         int lastIndex = uri.lastIndexOf("/");  // '/' 가 마지막으로 있는 곳의 index 번호를 가져옴.
         String action = uri.substring(lastIndex); // 위에서 찾은 인덱스 이후의 값을 가져옴. (/요청주소)
 
